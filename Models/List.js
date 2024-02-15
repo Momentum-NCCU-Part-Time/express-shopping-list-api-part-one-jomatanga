@@ -7,21 +7,12 @@ const shoppingListSchema = new mongoose.Schema({
         maxlength: 50,
         minlength: 1,
     },
-items: [
-    item: String, 
-    quantity: Number,
-    Purchased: Boolean,
-    {
-        createdAt: {
-            type: Date,
-        default: Date.now,
-        required: true,
-        }
-        updatedAt: {
-
-        }
-    }
-]
+    items: {
+        type: String, 
+        quantity: Number,
+        Purchased: Boolean,
+    },
+   
     createdAt: {
         type: Date,
         default: Date.now,
@@ -32,6 +23,17 @@ items: [
     }
 });
 
+ // {
+    //     createdAt: {
+    //         type: Date,
+    //     default: Date.now,
+    //     required: true,
+    //     }
+    //     updatedAt: {
+
+    //     }
+    // }
+//]
 //tell mongoose to use this model and insert
 //const shoppingList = mongoose.model('shoppingList', shoppingListSchema); 
 

@@ -1,12 +1,13 @@
 const express = require('express')
 
 ###
-GET http://localhost:3000/lists
-
+GET http://localhost:3000/lists/65cc0b300034dd14acb650c5
 
 ###
-POST 
+POST http://localhost:3000/lists
+Content-Type: application/json
 
+{"title": "List"}
 
 ###
 PUT 
