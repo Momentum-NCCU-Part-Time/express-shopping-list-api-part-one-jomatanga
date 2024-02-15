@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const dayjs = require('dayjs')
+dayjs.format()
 
 const shoppingListSchema = new mongoose.Schema({
     title: {
