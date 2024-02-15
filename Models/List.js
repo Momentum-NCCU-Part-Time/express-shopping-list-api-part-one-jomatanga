@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const dayjs = require('dayjs')
-dayjs.format()
 
 const shoppingListSchema = new mongoose.Schema({
     title: {
@@ -9,34 +7,13 @@ const shoppingListSchema = new mongoose.Schema({
         maxlength: 50,
         minlength: 1,
     },
-    items: {
-        type: String, 
+    items: [{
+        name: String, 
         quantity: Number,
-        Purchased: Boolean,
-    },
-   
-    createdAt: {
-        type: Date,
-        default: Date.now,
-        required: true,
-    },
-    updatedAt: {
-        type: Date,
-    }
-});
-
- // {
-    //     createdAt: {
-    //         type: Date,
-    //     default: Date.now,
-    //     required: true,
-    //     }
-    //     updatedAt: {
-
-    //     }
-    // }
-//]
-//tell mongoose to use this model and insert
-//const shoppingList = mongoose.model('shoppingList', shoppingListSchema); 
+        purchased: Boolean,
+    }],
+   },
+   { timestamps: true }
+   )
 
 module.exports = mongoose.model("List", shoppingListSchema); 

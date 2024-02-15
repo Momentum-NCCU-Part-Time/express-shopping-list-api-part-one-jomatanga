@@ -1,17 +1,32 @@
 const express = require('express')
 
-###
-GET http://localhost:3000/lists/65cc0b300034dd14acb650c5
+### GETTING ALL LISTS
+GET http://localhost:3000/lists/
 
-###
+### CREATING A NEW LIST
 POST http://localhost:3000/lists
 Content-Type: application/json
 
 {"title": "List"}
 
+### GET LIST BY SPECIFIC ID
+GET http://localhost:3000/lists/65cc0b300034dd14acb650c5
+
 ###
 PUT 
 
 
-###
-PATCH
+### UPDATING LIST TITLE BY ID
+PATCH http://localhost:3000/lists/65cc0b300034dd14acb650c5
+Content-Type: application/json
+
+{"title": "List2"}
+
+### ADDING ITEMS TO LIST BY ID
+POST http://localhost:3000/lists/65ce725af95eb2529283a72a/items
+Content-Type: application/json
+
+{"name": "Ice Cream",
+"quantity": 2,
+"purchased": true 
+}
